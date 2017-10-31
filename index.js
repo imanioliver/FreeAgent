@@ -25,6 +25,10 @@ mongoose.connect(config.database, { useMongoClient: true });
 const server = app.listen(config.port);
 console.log('Your server is running on port ' + config.port + '.');
 
+if (process.eng.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
+
 // Setting up basic middleware for all Express requests
 app.use(logger(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms')); // Log requests to API using morgan
 app.use(bodyParser.urlencoded({ extended: false }));
