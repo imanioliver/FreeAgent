@@ -13,7 +13,7 @@ const routerUser = require('./routes/User');
 const routerResult = require('./routes/Result');
 const routerMeet = require('./routes/Meet');
 const routerSavedMeet = require('./routes/SavedMeet');
-const routerTeam = require('./routes/Team');
+const routerTeam = require('./routes/team');
 
 
 // Database Connection
