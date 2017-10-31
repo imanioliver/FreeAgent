@@ -25,7 +25,7 @@ mongoose.connect(config.database, { useMongoClient: true });
 const server = app.listen(config.port);
 console.log('Your server is running on port ' + config.port + '.');
 
-if (process.eng.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
 
